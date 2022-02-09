@@ -41,13 +41,13 @@ public class MoviedatabaseApplication {
 		SpringApplication.run(MoviedatabaseApplication.class, args);
 	}
 
-	@PostMapping("/AllLanguages")
-	public @ResponseBody String AddLanguage(@RequestParam String name){
+	@PostMapping("/AddLanguages")
+	public @ResponseBody
+	String addLanguage(@RequestParam String name){
 
-		Language addLanguage = new Language();
+		Language addLanguage = new Language(name);
 		languageRepository.save(addLanguage);
-				return save;
-
+		return save;
 
 	}
 

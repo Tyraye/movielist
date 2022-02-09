@@ -1,4 +1,4 @@
-package com.example.tyraye.dennis.demo;
+package com.example.tyraye.dennis.demoTest;
 
 import com.example.tyraye.dennis.demo.Language;
 import org.junit.jupiter.api.Test;

@@ -12,9 +12,8 @@ public class Language {
 
 
 
-
     @Id
-    @GeneratedValue (strategy = GenerationType.TABLE)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int language_id;
 
 
@@ -29,9 +28,7 @@ public class Language {
 
     }
 
-    public int getLanguage_id() {
-        return language_id;
-    }
+
 
     //Returns the name from Languages section
     public String getName() {
@@ -41,5 +38,11 @@ public class Language {
     public void setName(String name) {
         this.name = name;
     }
+
+    public int getLanguage_id() {
+        return language_id;
+    }
+
+
 
 }
