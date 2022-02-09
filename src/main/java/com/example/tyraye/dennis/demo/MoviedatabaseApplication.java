@@ -3,6 +3,7 @@ package com.example.tyraye.dennis.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 // http://localhost:8080/Home/AllLanguages
@@ -23,6 +24,9 @@ public class MoviedatabaseApplication {
 	private ActorRepository actorRepository;
 	//add autowired
 
+	private String save = "save";
+
+
 	//add comma and repositories
 	public MoviedatabaseApplication(LanguageRepository languageRepository, FilmRepository filmRepository, CategoryRepository categoryRepository, ActorRepository actorRepository){
 
@@ -37,7 +41,22 @@ public class MoviedatabaseApplication {
 		SpringApplication.run(MoviedatabaseApplication.class, args);
 	}
 
+	@PostMapping("/AllLanguages")
+	public @ResponseBody String AddLanguage(@RequestParam String name){
 
+		Language addLanguage = new Language();
+		languageRepository.save(addLanguage);
+				return save;
+
+
+	}
+
+
+//	Language createLanguage(@Validated @RequestBody Language newLanguage) {
+//
+//		return languageRepository.save(newLanguage);
+//
+//	}
 
 	@GetMapping("/AllLanguages") //Access point for the language command, defines Languages class
 	public @ResponseBody
