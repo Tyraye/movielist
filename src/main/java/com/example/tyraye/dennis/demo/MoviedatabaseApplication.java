@@ -17,13 +17,19 @@ public class MoviedatabaseApplication {
 	private LanguageRepository languageRepository;
 	@Autowired
 	private FilmRepository filmRepository;
+	@Autowired
+	private CategoryRepository categoryRepository;
+	@Autowired
+	private ActorRepository actorRepository;
 	//add autowired
 
 	//add comma and repositories
-	public MoviedatabaseApplication(LanguageRepository languageRepository, FilmRepository filmRepository){
+	public MoviedatabaseApplication(LanguageRepository languageRepository, FilmRepository filmRepository, CategoryRepository categoryRepository, ActorRepository actorRepository){
 
 		this.languageRepository = languageRepository;
 		this.filmRepository = filmRepository;
+		this.categoryRepository = categoryRepository;
+		this.actorRepository = actorRepository;
 
 	}
 
@@ -49,7 +55,21 @@ public class MoviedatabaseApplication {
 
 	}
 
+	@GetMapping("/AllCategories")
+	public @ResponseBody
+	Iterable<Category> getAllCategories(){
 
+		return categoryRepository.findAll();
+
+	}
+
+	@GetMapping("/AllActors")
+	public @ResponseBody
+	Iterable<Actor> getAllActors(){
+
+		return actorRepository.findAll();
+
+	}
 
 
 }
