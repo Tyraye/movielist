@@ -17,8 +17,7 @@ public class Category {
 
 
     public Category(String name){
-
-        this.category_id = category_id;
+        category_id = category_id;
         this.name = name;
 
     }
