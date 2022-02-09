@@ -10,15 +10,20 @@ import org.springframework.web.bind.annotation.*;
 // added code
 @SpringBootApplication
 @RestController
-@RequestMapping("/Home")
+@RequestMapping("/Home") //Access point for the server/website
 public class MoviedatabaseApplication {
 
 	@Autowired
 	private LanguageRepository languageRepository;
+	@Autowired
+	private FilmRepository filmRepository;
+	//add autowired
 
-	public MoviedatabaseApplication(LanguageRepository languageRepository){
+	//add comma and repositories
+	public MoviedatabaseApplication(LanguageRepository languageRepository, FilmRepository filmRepository){
 
 		this.languageRepository = languageRepository;
+		this.filmRepository = filmRepository;
 
 	}
 
@@ -28,7 +33,7 @@ public class MoviedatabaseApplication {
 
 
 
-	@GetMapping("/AllLanguages")
+	@GetMapping("/AllLanguages") //Access point for the language command, defines Languages class
 	public @ResponseBody
 	Iterable<Language> getAllLanguages(){
 
@@ -36,6 +41,15 @@ public class MoviedatabaseApplication {
 
 	}
 	
+	@GetMapping("/AllFilms")
+	public @ResponseBody
+	Iterable<Film> getAllFilms(){
+
+		return filmRepository.findAll();
+
+	}
+
+
 
 
 }
