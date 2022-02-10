@@ -37,6 +37,10 @@ public class MoviedatabaseApplication {
 
 	}
 
+	public MoviedatabaseApplication(LanguageRepository languageRepository) {
+	}
+
+
 	public static void main(String[] args) {
 		SpringApplication.run(MoviedatabaseApplication.class, args);
 	}
