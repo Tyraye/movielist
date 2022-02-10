@@ -7,9 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-
 public class Language {
-
 
 
     @Id
@@ -23,7 +21,6 @@ public class Language {
         this.name=name;
     }
 
-
     public Language(){
 
     }
@@ -31,6 +28,10 @@ public class Language {
 
 
     //Returns the name from Languages section
+    public int getLanguage_id() {
+        return language_id;
+    }
+
     public String getName() {
         return name;
     }
@@ -39,9 +40,7 @@ public class Language {
         this.name = name;
     }
 
-    public int getLanguage_id() {
-        return language_id;
-    }
+
 
 
 

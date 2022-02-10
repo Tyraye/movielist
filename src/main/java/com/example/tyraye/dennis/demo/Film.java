@@ -6,18 +6,21 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Table (name = "film")
+
 public class Film {
 
 
-
     @Id
-    @GeneratedValue (strategy = GenerationType.TABLE)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int film_id;
     private String title;
     private String description;
+    private Integer release_year;
     private Integer length;
     private String rating;
-    private String special_features;
+    // private String special_features;
+    private int language_id;
 
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
@@ -33,13 +36,19 @@ public class Film {
 
 
 
-    public Film(String title, String description, Integer length, String rating, String special_features){
+        public Film(String title,
+                    String description,
+                    int length,
+                    String rating,
+                    int release_year,
+                    int language_id){
 
         this.title=title;
         this.description=description;
         this.length=length;
         this.rating=rating;
-        this.special_features=special_features;
+        this.release_year=release_year;
+        this.language_id=language_id;
 
     }
 
@@ -48,19 +57,24 @@ public class Film {
     }
 
 
-    public Set<Actor> getActor() {
-        return actor;
+    public void setFilm_id(int film_id) {
+        this.film_id = film_id;
     }
-
-
 
     public int getFilm_id() {
         return film_id;
     }
 
-    public void setFilm_id(int film_id) {
-        this.film_id = film_id;
+
+
+    public int getLanguage_id() {
+        return language_id;
     }
+
+    public void setLanguage_id(int language_id) {
+        this.language_id = language_id;
+    }
+
 
 
     public String getTitle() {
@@ -72,6 +86,7 @@ public class Film {
     }
 
 
+
     public String getDescription() {
         return description;
     }
@@ -79,6 +94,7 @@ public class Film {
     public void setDescription(String description) {
         this.description = description;
     }
+
 
 
     public Integer getLength() {
@@ -90,6 +106,7 @@ public class Film {
     }
 
 
+
     public String getRating() {
         return rating;
     }
@@ -99,12 +116,40 @@ public class Film {
     }
 
 
-    public String getSpecial_features() {
-        return special_features;
+
+    public Integer getRelease_year() {
+        return release_year;
     }
 
-    public void setSpecial_features(String special_features) {
-        this.special_features = special_features;
+    public void setRelease_year(Integer release_year) {
+        this.release_year = release_year;
     }
+
+
+
+    public Set<Actor> getActor() {
+        return actor;
+    }
+
+    public void setActor(Set<Actor> actor) {
+        this.actor = actor;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

@@ -56,6 +56,31 @@ public class MoviedatabaseApplication {
 	}
 
 
+	@PostMapping("/AddFilm")
+	public @ResponseBody String addFilm(@RequestParam String title,
+										String description,
+										int release_year,
+										Integer length,
+										String rating,
+										int language_id){
+
+		Film addFilm = new Film(
+				title,
+				description,
+				length,
+				rating,
+				release_year,
+				language_id);
+
+		filmRepository.save(addFilm);
+		return save;
+
+
+	}
+
+
+
+
 //	Language createLanguage(@Validated @RequestBody Language newLanguage) {
 //
 //		return languageRepository.save(newLanguage);
@@ -92,6 +117,9 @@ public class MoviedatabaseApplication {
 		return filmRepository.findById(film_id);
 
 	}
+
+
+
 
 
 
