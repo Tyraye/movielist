@@ -120,11 +120,6 @@ public class MoviedatabaseApplication {
 
 
 
-
-
-
-
-
 	@GetMapping("/AllCategories")
 	public @ResponseBody
 	Iterable<Category> getAllCategories(){
