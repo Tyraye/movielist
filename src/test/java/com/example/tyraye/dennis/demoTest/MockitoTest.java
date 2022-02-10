@@ -32,7 +32,11 @@ public class MockitoTest {
     @BeforeEach // sets up fake database with empty data
     void Setup(){
 
-        moviedatabaseApplication = new MoviedatabaseApplication(languageRepository, filmRepository, categoryRepository, actorRepository);
+        moviedatabaseApplication = new MoviedatabaseApplication(
+                languageRepository,
+                filmRepository,
+                categoryRepository,
+                actorRepository);
 
     }
 

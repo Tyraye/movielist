@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 // http://localhost:8080/Home/AllLanguages
 // http://localhost:8080/hello
 // added code
@@ -37,8 +39,6 @@ public class MoviedatabaseApplication {
 
 	}
 
-	public MoviedatabaseApplication(LanguageRepository languageRepository) {
-	}
 
 
 	public static void main(String[] args) {
@@ -62,6 +62,11 @@ public class MoviedatabaseApplication {
 //
 //	}
 
+
+
+
+
+
 	@GetMapping("/AllLanguages") //Access point for the language command, defines Languages class
 	public @ResponseBody
 	Iterable<Language> getAllLanguages(){
@@ -77,6 +82,20 @@ public class MoviedatabaseApplication {
 		return filmRepository.findAll();
 
 	}
+
+
+
+	@GetMapping("/findFilm/{film_id}")
+	public @ResponseBody
+	Optional<Film> getFilmByID(@PathVariable int film_id){
+
+		return filmRepository.findById(film_id);
+
+	}
+
+
+
+
 
 	@GetMapping("/AllCategories")
 	public @ResponseBody
