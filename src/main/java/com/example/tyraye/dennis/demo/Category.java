@@ -1,25 +1,21 @@
 package com.example.tyraye.dennis.demo;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Category {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.TABLE)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
 
     private int category_id;
+
+
     private String name;
 
-
     public Category(String name){
-
         this.name = name;
-
     }
 
     public Category(){
@@ -42,4 +38,8 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
+
+
+
+
 }

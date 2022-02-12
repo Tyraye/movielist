@@ -128,6 +128,23 @@ public class MoviedatabaseApplication {
 
 	}
 
+
+
+	@PostMapping("/AddCategory")
+	public @ResponseBody
+	String addCategory (@RequestParam String name){
+
+		Category addCategory = new Category(name);
+		categoryRepository.save(addCategory);
+		return save;
+
+	}
+
+
+
+
+
+
 	@GetMapping("/AllActors")
 	public @ResponseBody
 	Iterable<Actor> getAllActors(){
