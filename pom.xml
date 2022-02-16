@@ -14,23 +14,33 @@
 	<name>moviedatabase</name>
 	<description>Making a movie database</description>
 	<properties>
-
-
-			<maven.compiler.source>17</maven.compiler.source>
-			<maven.compiler.target>17</maven.compiler.target>
-			<sonar.organization>samebrierley</sonar.organization>
-			<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-
-
-
+		<start-class> com.example.tyraye.dennis.demo.MoviedatabaseApplication </start-class>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 		<java.version>17</java.version>
-
 		<!-- SonarCloud Properties -->
 		<sonar.organization>tyraye</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 	<dependencies>
 	<dependency>
+		<groupId>software.amazon.awssdk</groupId>
+		<artifactId>ec2</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>software.amazon.awssdk</groupId>
+		<artifactId>s3</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>software.amazon.awssdk</groupId>
+		<artifactId>dynamodb</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>com.amazonaws.secretsmanager</groupId>
+		<artifactId>aws-secretsmanager-jdbc</artifactId>
+		<version>1.0.5</version>
+	</dependency>
+		<dependency>
 		<groupId>junit</groupId>
 		<artifactId>junit</artifactId>
 		<scope>test</scope>
@@ -98,15 +108,21 @@
 	</dependency>
 	</dependencies>
 
-
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>software.amazon.awssdk</groupId>
+				<artifactId>bom</artifactId>
+				<version>2.17.130</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<finalName>maven-unit-test</finalName>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
@@ -127,6 +143,24 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<fork>true</fork>
+					<mainClass>${start-class}</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -137,7 +171,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.example.tyraye.dennis.demo</mainClass>
+							<mainClass>com.example.tyraye.dennis.demo.MoviedatabaseApplication</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
@@ -145,9 +179,6 @@
 					</descriptorRefs>
 				</configuration>
 			</plugin>
-
-
 		</plugins>
 	</build>
-
 </project>

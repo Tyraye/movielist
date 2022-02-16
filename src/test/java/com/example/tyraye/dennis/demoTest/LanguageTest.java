@@ -2,8 +2,9 @@ package com.example.tyraye.dennis.demoTest;
 
 import com.example.tyraye.dennis.demo.Language;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.context.ContextConfiguration;
 
-
+@ContextConfiguration(classes = {MoviedatabaseApplicationTests.class, Language.class})
 public class LanguageTest {
 
     private Language Language = new Language();

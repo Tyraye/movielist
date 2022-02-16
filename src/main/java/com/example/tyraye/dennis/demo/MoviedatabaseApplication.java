@@ -2,19 +2,31 @@ package com.example.tyraye.dennis.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.dynamodb.model.ResourceNotFoundException;
 
+import java.security.InvalidParameterException;
+
+import java.util.Base64;
 import java.util.Optional;
+
 
 // http://localhost:8080/Home/AllLanguages
 // http://localhost:8080/hello
 // added code
+
+
+
 @SpringBootApplication
 @RestController
 @RequestMapping("/Home") //Access point for the server/website
 public class MoviedatabaseApplication {
+
 
 	@Autowired
 	private LanguageRepository languageRepository;
