@@ -100,6 +100,7 @@ public class MoviedatabaseApplication {
 //	}
 
 	/////// new note
+	//test
 
 
 	@GetMapping("/AllLanguages") //Access point for the language command, defines Languages class
