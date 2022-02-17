@@ -99,16 +99,7 @@ public class MoviedatabaseApplication {
 //
 //	}
 
-
-
-
-// test
-// new test
-	//newer test
-	//literally another test
-	// owo
-	// sas
-
+	
 
 
 	@GetMapping("/AllLanguages") //Access point for the language command, defines Languages class
