@@ -62,4 +62,15 @@ public class MockitoTest {
 
     }
 
+//    @Test
+//    void canGetAllFilm() {
+//        //when
+//        Film underTest = new Film();
+//        underTest.getAllFilm();
+//        //then
+//        verify(filmRepository).findAll();
+//
+//    }
+
+
 }

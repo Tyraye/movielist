@@ -136,20 +136,8 @@ public class Film {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public void getAllFilm() {
+    }
 
 
 }
