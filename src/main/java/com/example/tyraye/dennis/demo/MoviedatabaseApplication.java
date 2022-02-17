@@ -103,6 +103,9 @@ public class MoviedatabaseApplication {
 
 
 // test
+// new test
+
+
 
 	@GetMapping("/AllLanguages") //Access point for the language command, defines Languages class
 	public @ResponseBody
