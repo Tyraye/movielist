@@ -17,11 +17,18 @@ public class ActorTest {
     public void testFirstName() {
 
         Actor testFirstName = new Actor();
-        testFirstName.setFirst_name("Ty");
-        assertEquals("Ty", testFirstName.getFirst_name(), "First name is wrong");
+        testFirstName.setFirst_name("Pen");
+        assertEquals("Pen", testFirstName.getFirst_name(), "First name is wrong");
     }
 
 
+    @Test
+    public void testLastName(){
+
+        Actor testLastName = new Actor();
+        testLastName.setLast_name("Island");
+        assertEquals("Island", testLastName.getLast_name(), "Last name is incorrect");
+    }
 
 
 

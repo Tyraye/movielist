@@ -9,7 +9,11 @@ import org.junit.validator.ValidateWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import java.util.Optional;
+
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 
 @ExtendWith(MockitoExtension.class)
@@ -59,8 +63,22 @@ public class MockitoTest {
         Assertions.assertEquals(expected, actual, "Data has been incorrectly input into the mock database");
 
 
-
     }
+
+
+
+
+    @Test
+    public void testGetFilmById(){
+        Film testFilm = new Film("title", "description", 222, "PG-13", 2018, 1);
+        when(MoviedatabaseApplication.getFilmByID(1)).thenReturn(Optional.of(testFilm));
+        Assertions.assertEquals(Optional.of(testFilm), MoviedatabaseApplication.getFilmByID(1), "This Film Id getting test has failed");
+    }
+
+
+
+
+
 
 //    @Test
 //    void canGetAllFilm() {
