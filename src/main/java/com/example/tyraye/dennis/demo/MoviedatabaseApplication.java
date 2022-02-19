@@ -92,17 +92,6 @@ public class MoviedatabaseApplication {
 
 
 
-
-//	Language createLanguage(@Validated @RequestBody Language newLanguage) {
-//
-//		return languageRepository.save(newLanguage);
-//
-//	}
-
-	/////// new note
-	//test
-
-
 	@GetMapping("/AllLanguages") //Access point for the language command, defines Languages class
 	public @ResponseBody
 	Iterable<Language> getAllLanguages(){
