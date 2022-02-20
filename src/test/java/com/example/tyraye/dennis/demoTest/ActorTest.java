@@ -3,6 +3,7 @@ package com.example.tyraye.dennis.demoTest;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 import com.example.tyraye.dennis.demo.Actor;
@@ -10,7 +11,6 @@ import com.example.tyraye.dennis.demo.Actor;
 
 
 public class ActorTest {
-
 
 
     @Test
@@ -30,7 +30,11 @@ public class ActorTest {
         assertEquals("Island", testLastName.getLast_name(), "Last name is incorrect");
     }
 
-
+    @Test
+    void emptyConstructorTest() {
+        Actor actor = new Actor();
+        assertTrue(actor instanceof Actor,"This test has failed");
+    }
 
 
 

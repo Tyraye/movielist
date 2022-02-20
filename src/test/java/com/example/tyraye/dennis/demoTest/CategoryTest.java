@@ -17,6 +17,14 @@ public class CategoryTest {
 
 
     @Test
+    void getAndSetNameTest() {
+        testCategory.setName("NewTestCategory");
+        assertEquals("NewTestCategory",testCategory.getName(),"The test has failed");
+
+    }
+
+
+    @Test
     void getCategory_id() {
         assertEquals(0,testCategory.getCategory_id(),"This test has failed");
     }

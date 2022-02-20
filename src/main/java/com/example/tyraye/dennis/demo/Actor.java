@@ -38,6 +38,10 @@ public class Actor {
 
     }
 
+    public Actor(String firstName, String secondName) {
+
+    }
+
     public int getActor_id() {
         return actor_id;
     }
