@@ -3,16 +3,9 @@ package com.example.tyraye.dennis.demo;
 import com.amazonaws.services.secretsmanager.model.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import software.amazon.awssdk.regions.Region;
 
-import java.security.InvalidParameterException;
-
-import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -134,7 +127,7 @@ public class MoviedatabaseApplication {
 
 	@PostMapping("/AddCategory")
 	public @ResponseBody
-	String addCategory (@RequestParam String name){
+	String addCategory(int category_id, @RequestParam String name){
 
 		Category addCategory = new Category(name);
 		categoryRepository.save(addCategory);
