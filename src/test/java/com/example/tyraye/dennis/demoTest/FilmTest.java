@@ -69,12 +69,7 @@ public class FilmTest {
         assertEquals(1,filmTest.getLanguage_id(),"Language ID get test has failed");
     }
 
-    @Test
-    short setLanguage_idTest(){
-        filmTest.setLanguage_id(2);
-        assertEquals(2,setLanguage_idTest(),"Set test failed");
-        return 0;
-    }
+
 
 
     @Test
@@ -87,6 +82,16 @@ public class FilmTest {
         filmTest.setLength(100);
         assertEquals(100,filmTest.getLength(),"This test has failed");
     }
+
+
+    @Test
+    void setLanguage_idTest(){
+        filmTest.setLanguage_id(2);
+        assertEquals(2,filmTest.getLanguage_id(),"Set test failed");
+    }
+
+
+
 
     @Test
     void getRatingTest() {
