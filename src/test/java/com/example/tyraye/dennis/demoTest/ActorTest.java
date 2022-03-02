@@ -1,5 +1,6 @@
 package com.example.tyraye.dennis.demoTest;
 
+import com.example.tyraye.dennis.demo.Actor;
 import com.example.tyraye.dennis.demo.Film;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -8,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-import com.example.tyraye.dennis.demo.Actor;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -27,7 +27,7 @@ public class ActorTest {
     }
 
     @Test
-    void Actor_id() {
+    void Actor_idTest() {
         actorTest.setActor_id(1);
         assertEquals(1,actorTest.getActor_id(),"This test has failed");
     }
@@ -52,13 +52,20 @@ public class ActorTest {
     public void test_constructor() {
         assertTrue(actorTest instanceof Actor, "Not an instance of Actor");
     }
-
     private Set<Film> testFilmSet = new HashSet<>() {{
         add(new Film("1", "1", 1, "PG-13", 2003, 1));
     }};
 
-    Actor testActor = new Actor("me", "you");
 
+    //Actor(100, "Nigelica", "Monstrat"));
+    @Test
+    void getFilmsTest(){
+        Set<Film> testSet = new HashSet<>();
+        testSet.add(new Film());
+        actorTest.setFilms(testSet);
+        assertEquals(testSet,actorTest.getFilms(),"This test has failed");
+
+    }
 
 
     @Test

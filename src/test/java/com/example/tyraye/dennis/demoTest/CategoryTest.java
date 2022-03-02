@@ -23,9 +23,14 @@ public class CategoryTest {
 
     }
 
+    @Test
+    void setCategory_idTest(){
+        testCategory.setCategory_id(8);
+        assertEquals(8,testCategory.getCategory_id(),"Get Category ID test has failed");
+    }
 
     @Test
-    void getCategory_id() {
+    void getCategory_idTest() {
         assertEquals(0,testCategory.getCategory_id(),"This test has failed");
     }
 

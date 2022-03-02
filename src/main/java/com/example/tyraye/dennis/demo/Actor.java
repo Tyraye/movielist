@@ -2,7 +2,6 @@ package com.example.tyraye.dennis.demo;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -71,6 +70,9 @@ public class Actor {
         this.last_name = last_name;
     }
 
-    public static void setFilms(Set<Film> testSet) {
+    public void setFilms(Set<Film> films)
+    {
+        this.films = films;
     }
+
 }

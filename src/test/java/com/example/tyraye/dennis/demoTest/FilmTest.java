@@ -2,8 +2,6 @@ package com.example.tyraye.dennis.demoTest;
 
 import com.example.tyraye.dennis.demo.Actor;
 import com.example.tyraye.dennis.demo.Film;
-import com.example.tyraye.dennis.demo.FilmRepository;
-import com.example.tyraye.dennis.demo.Language;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
@@ -21,61 +19,82 @@ public class FilmTest {
 
 
     @Test
-    void getFilm_id() {
+    void getFilm_idTest() {
         assertEquals(0,filmTest.getFilm_id(),"This test has failed");
     }
 
+
     @Test
-    void getTitle() {
+    void setFilm_idTest(){
+        filmTest.setFilm_id(1000);
+        assertEquals(1000,filmTest.getFilm_id(),"Film ID setting has failed");
+    }
+
+
+    @Test
+    void getTitleTest() {
         assertEquals("FilmTest",filmTest.getTitle(),"This test has failed");
     }
 
     @Test
-    void setTitle() {
+    void setTitleTest() {
         filmTest.setTitle("Title2");
         assertEquals("Title2",filmTest.getTitle(),"This test has failed");
     }
 
     @Test
-    void getDescription() {
+    void getDescriptionTest() {
         assertEquals("Test Description",filmTest.getDescription(),"This test has failed");
     }
 
     @Test
-    void setDescription() {
+    void setDescriptionTest() {
         filmTest.setDescription("DescriptionChange");
         assertEquals("DescriptionChange",filmTest.getDescription(),"This test has failed");
     }
 
     @Test
-    void getRelease_year() {
+    void getRelease_yearTest() {
         assertEquals(2001,filmTest.getRelease_year(),"This test has failed");
     }
 
     @Test
-    void setRelease_year() {
+    void setRelease_yearTest() {
         filmTest.setRelease_year(1998);
         assertEquals(1998,filmTest.getRelease_year(),"This test has failed");
     }
 
     @Test
-    void getLength() {
+    void getLanguage_idTest() {
+        assertEquals(1,filmTest.getLanguage_id(),"Language ID get test has failed");
+    }
+
+    @Test
+    short setLanguage_idTest(){
+        filmTest.setLanguage_id(2);
+        assertEquals(2,setLanguage_idTest(),"Set test failed");
+        return 0;
+    }
+
+
+    @Test
+    void getLengthTest() {
         assertEquals(120,filmTest.getLength(),"This test has failed");
     }
 
     @Test
-    void setLength() {
+    void setLengthTest() {
         filmTest.setLength(100);
         assertEquals(100,filmTest.getLength(),"This test has failed");
     }
 
     @Test
-    void getRating() {
+    void getRatingTest() {
         assertEquals("PG-13",filmTest.getRating(),"This test has failed");
     }
 
     @Test
-    void setRating() {
+    void setRatingTest() {
         filmTest.setRating("U");
         assertEquals("U",filmTest.getRating(),"This test has failed");
     }
