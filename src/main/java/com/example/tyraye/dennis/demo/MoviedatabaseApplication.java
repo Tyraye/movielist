@@ -86,8 +86,8 @@ public class MoviedatabaseApplication {
 	}
 
 	//Jenkins test
-	// test 2
-	
+
+
 
 
 	@GetMapping("/AllLanguages") //Access point for the language command, defines Languages class
