@@ -26,7 +26,7 @@ public class MoviedatabaseApplication {
 	@Autowired
 	private LanguageRepository languageRepository;
 	@Autowired
-	private static FilmRepository filmRepository;
+	private FilmRepository filmRepository;
 	@Autowired
 	private CategoryRepository categoryRepository;
 	@Autowired
@@ -106,7 +106,7 @@ public class MoviedatabaseApplication {
 
 
 	@GetMapping("/findFilm/{film_id}")
-	public static @ResponseBody
+	public @ResponseBody
 	Optional<Film> getFilmByID(@PathVariable int film_id){
 
 		return filmRepository.findById(film_id);

@@ -5,10 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import com.example.tyraye.dennis.demo.Category;
 
-
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CategoryTest {
 
@@ -36,7 +33,7 @@ public class CategoryTest {
 
     @Test
     void emptyConstructorTest() {
-        assertTrue(testCategory != null,"This test has failed");
+        assertNotNull(testCategory != null,"This test has failed");
     }
 
 

@@ -19,7 +19,6 @@ public class Film {
     private Integer release_year;
     private Integer length;
     private String rating;
-    // private String special_features;
     private int language_id;
 
 
