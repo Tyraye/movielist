@@ -1,5 +1,6 @@
 package com.example.tyraye.dennis.demoTest;
 
+import com.example.tyraye.dennis.demo.Film;
 import org.junit.jupiter.api.Test;
 
 
@@ -33,9 +34,9 @@ public class CategoryTest {
 
     @Test
     void emptyConstructorTest() {
-        assertNotNull(testCategory != null,"This test has failed");
+       Category category = new Category();
+       assertTrue(category instanceof Category, "Empty constructor test has failed");
     }
-
 
 
 
