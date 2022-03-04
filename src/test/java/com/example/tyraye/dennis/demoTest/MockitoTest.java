@@ -1,5 +1,6 @@
 package com.example.tyraye.dennis.demoTest;
 import com.example.tyraye.dennis.demo.*;
+import io.cucumber.java.jv.Lan;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -90,6 +91,18 @@ public class MockitoTest {
 
     }
 
+//    @Test
+//    public void testDeleteLanguage(){
+//        Language saveLanguage = new Language("Test language");
+//        String actual = String.valueOf(moviedatabaseApplication.deleteLanguage(8));
+//        String expected = "{}";
+//        ArgumentCaptor<Integer> delLangArgCaptor = ArgumentCaptor.forClass(Integer.class);
+//        verify(languageRepository).deleteById(delLangArgCaptor.capture());
+//        delLangArgCaptor.getValue();
+//        Assertions.assertEquals(expected, actual, "The specified category was not successfully deleted.");
+//    }
+
+
 
     @Test
     public void testGetLanguage(){
@@ -103,26 +116,6 @@ public class MockitoTest {
             Assertions.assertEquals(languageList,moviedatabaseApplication.getAllLanguages(),"Get language test has failed");
         }
     }
-
-
-
-//    @Test
-//    public void testGetFilmById(){
-//        Film testFilm = new Film("title", "description", 222, "PG-13", 2018, 1);
-//        when(MoviedatabaseApplication.getFilmByID(1)).thenReturn(Optional.of(testFilm));
-//        Assertions.assertEquals(Optional.of(testFilm), MoviedatabaseApplication.getFilmByID(1), "This Film Id getting test has failed");
-//    }
-
-
-//    @Test
-//    void canGetAllFilm() {
-//        //when
-//        Film underTest = new Film();
-//        underTest.getAllFilm();
-//        //then
-//        verify(filmRepository).findAll();
-//
-//    }
 
 
 }

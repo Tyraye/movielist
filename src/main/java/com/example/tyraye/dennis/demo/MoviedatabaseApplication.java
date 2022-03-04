@@ -85,10 +85,6 @@ public class MoviedatabaseApplication {
 
 	}
 
-	//Jenkins test
-// test
-
-
 
 	@GetMapping("/AllLanguages") //Access point for the language command, defines Languages class
 	public @ResponseBody
@@ -140,14 +136,14 @@ public class MoviedatabaseApplication {
 
 
 
-	@DeleteMapping ("/DeleteLanguage/{language_id}")
-	public Map<String, Boolean> deleteLanguage (@PathVariable(value = "language_id") int language_id)
-			throws com.amazonaws.services.secretsmanager.model.ResourceNotFoundException {
-		Language language = languageRepository.findById(language_id).orElseThrow(() ->new ResourceNotFoundException("No language was found"));
-		languageRepository.delete(language);
-		Map<String,Boolean> response = new HashMap<>();
-		return response;
-	}
+//	@DeleteMapping ("/DeleteLanguage/{language_id}")
+//	public Map<String, Boolean> deleteLanguage (@PathVariable(value = "language_id") int language_id)
+//			throws com.amazonaws.services.secretsmanager.model.ResourceNotFoundException {
+//		Language language = languageRepository.findById(language_id).orElseThrow(() ->new ResourceNotFoundException("No language was found"));
+//		languageRepository.delete(language);
+//		Map<String,Boolean> response = new HashMap<>();
+//		return response;
+//	}
 
 
 	@PutMapping("/UpdateActor/{actor_id}")
