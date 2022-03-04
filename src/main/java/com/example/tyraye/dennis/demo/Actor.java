@@ -10,18 +10,16 @@ import java.util.Set;
 @Entity
 public class Actor {
 
+    // Creates object based on data that will be present in the Database
     @Id
     @GeneratedValue (strategy = GenerationType.TABLE)
     private int actor_id;
     private String first_name;
     private String last_name;
 
-
-
     @ManyToMany(mappedBy = "actor", fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Film> films = new HashSet<>();
-
 
 
     public Actor(Integer actor_id, String first_name, String last_name){
@@ -32,6 +30,9 @@ public class Actor {
 
     }
 
+
+    // Setters enable data to be registered to the objects declared above
+    // Getters are used to call on data from the database within the MoviedatabaseApplication file
 
     public Actor(){
 
@@ -44,7 +45,6 @@ public class Actor {
     public int getActor_id() {
         return actor_id;
     }
-
 
     public Set<Film> getFilms() {
         return films;
